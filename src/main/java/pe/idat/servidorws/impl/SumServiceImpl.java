@@ -10,7 +10,7 @@ import pe.idat.sumservice.wsdl.SumServicePort;
 
 @Service
 @SchemaValidation(type = SchemaValidationType.REQUEST)
-@InInterceptors(classes = WSSecurityInterceptor.class)
+// @InInterceptors(classes = WSSecurityInterceptor.class)
 public class SumServiceImpl implements SumServicePort {
 
   @Override
