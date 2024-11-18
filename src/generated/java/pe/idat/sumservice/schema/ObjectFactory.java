@@ -61,4 +61,52 @@ public class ObjectFactory {
         return new GetPersonaResponse();
     }
 
+    /**
+     * Create an instance of {@link AddPersonRequest }
+     * 
+     */
+    public AddPersonRequest createAddPersonRequest() {
+        return new AddPersonRequest();
+    }
+
+    /**
+     * Create an instance of {@link AddPersonResponse }
+     * 
+     */
+    public AddPersonResponse createAddPersonResponse() {
+        return new AddPersonResponse();
+    }
+
+    /**
+     * Create an instance of {@link UpdatePersonRequest }
+     * 
+     */
+    public UpdatePersonRequest createUpdatePersonRequest() {
+        return new UpdatePersonRequest();
+    }
+
+    /**
+     * Create an instance of {@link UpdatePersonResponse }
+     * 
+     */
+    public UpdatePersonResponse createUpdatePersonResponse() {
+        return new UpdatePersonResponse();
+    }
+
+    /**
+     * Create an instance of {@link DeletePersonRequest }
+     * 
+     */
+    public DeletePersonRequest createDeletePersonRequest() {
+        return new DeletePersonRequest();
+    }
+
+    /**
+     * Create an instance of {@link DeletePersonResponse }
+     * 
+     */
+    public DeletePersonResponse createDeletePersonResponse() {
+        return new DeletePersonResponse();
+    }
+
 }

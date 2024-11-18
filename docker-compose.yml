@@ -1,0 +1,21 @@
+services:
+  mysql:
+    image: mysql:8.0.33
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: soapserver
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin12345
+    ports:
+      - "3306:3306"
+  soapserver:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USERNAME: admin
+      DB_PASSWORD: admin12345

@@ -26,6 +26,24 @@
   <wsdl:message name="GetPersonaResponse">
     <wsdl:part element="ns1:GetPersonaResponse" name="parameters"/>
   </wsdl:message>
+  <wsdl:message name="AddPersonRequest">
+    <wsdl:part element="ns1:AddPersonRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="AddPersonResponse">
+    <wsdl:part element="ns1:AddPersonResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="UpdatePersonRequest">
+    <wsdl:part element="ns1:UpdatePersonRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="UpdatePersonResponse">
+    <wsdl:part element="ns1:UpdatePersonResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="DeletePersonRequest">
+    <wsdl:part element="ns1:DeletePersonRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="DeletePersonResponse">
+    <wsdl:part element="ns1:DeletePersonResponse" name="parameters"/>
+  </wsdl:message>
 
   <wsdl:portType name="SumServicePort">
     <wsdl:operation name="GetSum">
@@ -35,6 +53,18 @@
     <wsdl:operation name="GetPersona">
       <wsdl:input message="tns:GetPersonaRequest"/>
       <wsdl:output message="tns:GetPersonaResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddPerson">
+      <wsdl:input message="tns:AddPersonRequest"/>
+      <wsdl:output message="tns:AddPersonResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePerson">
+      <wsdl:input message="tns:UpdatePersonRequest"/>
+      <wsdl:output message="tns:UpdatePersonResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePerson">
+      <wsdl:input message="tns:DeletePersonRequest"/>
+      <wsdl:output message="tns:DeletePersonResponse"/>
     </wsdl:operation>
   </wsdl:portType>
 
@@ -51,6 +81,33 @@
     </wsdl:operation>
     <wsdl:operation name="GetPersona">
       <soap:operation soapAction="http://idat.pe/SumService/GetPersona"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPerson">
+      <soap:operation soapAction="http://idat.pe/SumService/AddPerson"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePerson">
+      <soap:operation soapAction="http://idat.pe/SumService/UpdatePerson"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePerson">
+      <soap:operation soapAction="http://idat.pe/SumService/DeletePerson"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>

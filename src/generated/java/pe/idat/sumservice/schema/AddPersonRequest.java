@@ -18,7 +18,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="nombre" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="apellido" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="edad" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
@@ -32,36 +31,18 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "id",
     "nombre",
     "apellido",
     "edad"
 })
-@XmlRootElement(name = "GetPersonaResponse")
-public class GetPersonaResponse {
+@XmlRootElement(name = "AddPersonRequest")
+public class AddPersonRequest {
 
-    protected int id;
     @XmlElement(required = true)
     protected String nombre;
     @XmlElement(required = true)
     protected String apellido;
     protected int edad;
-
-    /**
-     * Gets the value of the id property.
-     * 
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * Sets the value of the id property.
-     * 
-     */
-    public void setId(int value) {
-        this.id = value;
-    }
 
     /**
      * Gets the value of the nombre property.
