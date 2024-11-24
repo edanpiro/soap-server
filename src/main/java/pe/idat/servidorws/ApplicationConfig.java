@@ -8,7 +8,7 @@ import org.apache.cxf.jaxws.EndpointImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import pe.idat.servidorws.impl.SumServiceImpl;
+import pe.idat.servidorws.impl.PersonServiceImpl;
 
 @Configuration
 public class ApplicationConfig {
@@ -17,8 +17,8 @@ public class ApplicationConfig {
   private Bus bus;
 
   @Bean
-  public Endpoint endpoint(SumServiceImpl sumServiceImpl){
-    Endpoint endpoint = new EndpointImpl(bus, sumServiceImpl, SOAPBinding.SOAP12HTTP_BINDING);
+  public Endpoint endpoint(PersonServiceImpl personServiceImpl){
+    Endpoint endpoint = new EndpointImpl(bus, personServiceImpl, SOAPBinding.SOAP12HTTP_BINDING);
     endpoint.publish("/soap/Service");
     return endpoint;
   }

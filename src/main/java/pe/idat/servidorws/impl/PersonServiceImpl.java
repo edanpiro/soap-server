@@ -14,7 +14,7 @@ import java.util.Optional;
 @Service
 @SchemaValidation(type = SchemaValidationType.REQUEST)
 // @InInterceptors(classes = WSSecurityInterceptor.class)
-public class SumServiceImpl implements SoapServicePort {
+public class PersonServiceImpl implements SoapServicePort {
 //public class SumServiceImpl {
 
   @Autowired
