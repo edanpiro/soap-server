@@ -19,7 +19,7 @@ public class ApplicationConfig {
   @Bean
   public Endpoint endpoint(SumServiceImpl sumServiceImpl){
     Endpoint endpoint = new EndpointImpl(bus, sumServiceImpl, SOAPBinding.SOAP12HTTP_BINDING);
-    endpoint.publish("/soap/SumService");
+    endpoint.publish("/soap/Service");
     return endpoint;
   }
 }

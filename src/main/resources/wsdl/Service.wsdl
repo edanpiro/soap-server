@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wsdl:definitions
-        name="SumService"
-        targetNamespace="http://idat.pe/SumService/wsdl"
-        xmlns:tns="http://idat.pe/SumService/wsdl"
-        xmlns:ns1="http://idat.pe/SumService/schema"
+        name="Service"
+        targetNamespace="http://idat.pe/Service/wsdl"
+        xmlns:tns="http://idat.pe/Service/wsdl"
+        xmlns:ns1="http://idat.pe/Service/schema"
         xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
         xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
         xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
   <wsdl:types>
-    <xsd:schema targetNamespace="http://idat.pe/SumService/wsdl" >
-      <xsd:import namespace="http://idat.pe/SumService/schema" schemaLocation="SumService.xsd"/>
+    <xsd:schema targetNamespace="http://idat.pe/Service/wsdl" >
+      <xsd:import namespace="http://idat.pe/Service/schema" schemaLocation="Service.xsd"/>
     </xsd:schema>
   </wsdl:types>
 
-  <wsdl:message name="GetSumRequest">
-    <wsdl:part element="ns1:GetSumRequest" name="parameters"/>
-  </wsdl:message>
-  <wsdl:message name="GetSumResponse">
-    <wsdl:part element="ns1:GetSumResponse" name="parameters"/>
-  </wsdl:message>
   <wsdl:message name="GetPersonaRequest">
     <wsdl:part element="ns1:GetPersonaRequest" name="parameters"/>
   </wsdl:message>
@@ -45,11 +39,7 @@
     <wsdl:part element="ns1:DeletePersonResponse" name="parameters"/>
   </wsdl:message>
 
-  <wsdl:portType name="SumServicePort">
-    <wsdl:operation name="GetSum">
-      <wsdl:input message="tns:GetSumRequest"/>
-      <wsdl:output message="tns:GetSumResponse"/>
-    </wsdl:operation>
+  <wsdl:portType name="SoapServicePort">
     <wsdl:operation name="GetPersona">
       <wsdl:input message="tns:GetPersonaRequest"/>
       <wsdl:output message="tns:GetPersonaResponse"/>
@@ -68,19 +58,10 @@
     </wsdl:operation>
   </wsdl:portType>
 
-  <wsdl:binding name="SumServiceSOAPBinding" type="tns:SumServicePort">
+  <wsdl:binding name="ServiceSOAPBinding" type="tns:SoapServicePort">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="GetSum">
-      <soap:operation soapAction="http://idat.pe/SumService/GetSum"/>
-      <wsdl:input>
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal"/>
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="GetPersona">
-      <soap:operation soapAction="http://idat.pe/SumService/GetPersona"/>
+      <soap:operation soapAction="http://idat.pe/Service/GetPersona"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
@@ -89,7 +70,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="AddPerson">
-      <soap:operation soapAction="http://idat.pe/SumService/AddPerson"/>
+      <soap:operation soapAction="http://idat.pe/Service/AddPerson"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
@@ -98,7 +79,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdatePerson">
-      <soap:operation soapAction="http://idat.pe/SumService/UpdatePerson"/>
+      <soap:operation soapAction="http://idat.pe/Service/UpdatePerson"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
@@ -107,7 +88,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeletePerson">
-      <soap:operation soapAction="http://idat.pe/SumService/DeletePerson"/>
+      <soap:operation soapAction="http://idat.pe/Service/DeletePerson"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
@@ -117,9 +98,9 @@
     </wsdl:operation>
   </wsdl:binding>
 
-  <wsdl:service name="SumService">
-    <wsdl:port binding="tns:SumServiceSOAPBinding" name="SumServiceSOAPBinding">
-      <soap:address location="http://localhost:8080/services/soap/SumService"/>
+  <wsdl:service name="Service">
+    <wsdl:port binding="tns:ServiceSOAPBinding" name="ServiceSOAPBinding">
+      <soap:address location="http://localhost:8080/services/soap/Service"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

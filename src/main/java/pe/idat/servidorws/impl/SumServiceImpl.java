@@ -6,25 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.idat.servidorws.entity.Persona;
 import pe.idat.servidorws.repository.PersonaRepository;
-import pe.idat.sumservice.schema.*;
-import pe.idat.sumservice.wsdl.SumServicePort;
+import pe.idat.service.schema.*;
+import pe.idat.service.wsdl.SoapServicePort;
 
 import java.util.Optional;
 
 @Service
 @SchemaValidation(type = SchemaValidationType.REQUEST)
 // @InInterceptors(classes = WSSecurityInterceptor.class)
-public class SumServiceImpl implements SumServicePort {
+public class SumServiceImpl implements SoapServicePort {
+//public class SumServiceImpl {
 
   @Autowired
   private PersonaRepository personaRepository;
-
-  @Override
-  public GetSumResponse getSum(GetSumRequest parameters) {
-    GetSumResponse response = new GetSumResponse();
-    response.setResult(parameters.getAddendOne() + parameters.getAddendTwo());
-    return response;
-  }
 
   @Override
   public GetPersonaResponse getPersona(GetPersonaRequest request) {

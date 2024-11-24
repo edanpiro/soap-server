@@ -83,8 +83,8 @@
 							<sourceRoot>${basedir}/src/generated/java</sourceRoot>
 							<wsdlOptions>
 								<wsdlOption>
-									<wsdl>${basedir}/src/main/resources/wsdl/SumService.wsdl</wsdl>
-									<serviceName>SumService</serviceName>
+									<wsdl>${basedir}/src/main/resources/wsdl/Service.wsdl</wsdl>
+									<serviceName>Service</serviceName>
 								</wsdlOption>
 							</wsdlOptions>
 						</configuration>
