@@ -2,6 +2,7 @@ package pe.idat.servidorws.impl;
 
 import org.apache.cxf.annotations.SchemaValidation;
 import org.apache.cxf.annotations.SchemaValidation.SchemaValidationType;
+import org.apache.cxf.interceptor.InInterceptors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.idat.servidorws.entity.Persona;
@@ -13,9 +14,8 @@ import java.util.Optional;
 
 @Service
 @SchemaValidation(type = SchemaValidationType.REQUEST)
-// @InInterceptors(classes = WSSecurityInterceptor.class)
+@InInterceptors(classes = WSSecurityInterceptor.class)
 public class PersonServiceImpl implements SoapServicePort {
-//public class SumServiceImpl {
 
   @Autowired
   private PersonaRepository personaRepository;

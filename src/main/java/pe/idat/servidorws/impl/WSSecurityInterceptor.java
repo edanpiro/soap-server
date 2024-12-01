@@ -15,7 +15,7 @@ public class WSSecurityInterceptor extends WSS4JInInterceptor {
   static {
     wsSecurityInterceptorConfig = new HashMap<String, Object>();
     wsSecurityInterceptorConfig.put(WSHandlerConstants.ACTION, WSHandlerConstants.USERNAME_TOKEN);
-    wsSecurityInterceptorConfig.put(WSHandlerConstants.PASSWORD_TYPE, WSConstants.PW_DIGEST);
+    wsSecurityInterceptorConfig.put(WSHandlerConstants.PASSWORD_TYPE, WSConstants.PW_TEXT);
     wsSecurityInterceptorConfig.put(WSHandlerConstants.PW_CALLBACK_CLASS, UsernameTokenCallbackHandler.class.getName());
   }
 
